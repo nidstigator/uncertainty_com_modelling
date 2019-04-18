@@ -1,0 +1,87 @@
+# Copyright 2019 Nadim Atiya
+# 
+# uncertainty_com_modelling is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# uncertainty_com_modelling is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with uncertainty_com_modelling.  If not, see <https://www.gnu.org/licenses/>.
+
+
+#Reduced two-variable model without recurrent AMPA
+#Use with r2vm.m code
+
+#====Dynamical equations======================================
+
+s1'=-(s1/Tnmda)+(1-s1)*gamma*nu1(s1,s2)/1000
+s2'=-(s2/Tnmda)+(1-s2)*gamma*nu2(s1,s2)/1000
+
+#====Initial conditions=======================================
+
+init s1=0,s2=0
+
+#====Parameters===============================================
+
+#-----External stimulus-------
+par mu0=30.0,coh=0.0
+
+#----Synaptic constants ---
+
+#NMDAR
+par Tnmda=100,gamma=0.641
+
+#AMPAR
+par Tampa=2
+
+#----Input-output function parameters (for a pyramidal cell)--
+
+par a=270,b=108,d=0.1540
+
+#----Synaptic coupling constants--------------
+
+par JAEext=0.00052,JN11=0.2609,JN12=0.0497, mc=0
+
+# External stimulus on pop1 (winner)
+Istim1=JAEext*mu0*(1+coh/100)
+
+# External stimulus on pop2 (loser)
+Istim2=JAEext*mu0*(1-coh/100)
+
+#----Constant effective external inputs + recurrent inhibition----
+
+I0=0.3255
+
+#-----Total synaptic input current to pyramdial cell----
+
+x1(s1,s2)=JN11*s1-JN12*s2+I0+Istim1+mc
+x2(s1,s2)=JN11*s2-JN12*s1+I0+Istim2+mc
+
+#-----Effective response function of E1 population------------
+
+nu1(s1,s2)=(a*x1(s1,s2)-b)/(1-exp(-d*(a*x1(s1,s2)-b)))
+
+#-----Effective response function of E2 population------------
+
+nu2(r1,r2)=(a*x2(r1,r2)-b)/(1-exp(-d*(a*x2(r1,r2)-b)))
+
+#======Setting of internal parameters for t===================
+
+@ total=1000,dt=0.1
+@ bound=10000,bell=0
+@ background=white
+
+#----Set the screen dimensions---------
+
+@ xlo=0,xhi=1,ylo=0,yhi=1
+
+#----Set the plotting variables--------
+
+@ xp=s2,yp=s1
+
+done
