@@ -36,7 +36,7 @@ convert_y_to_s: helper function to convert firing rates of sensorimotor populati
 contourfcmap-pkg-master: A better library to plot contour maps than the built-in MATLAB algorithm. See copyright notice below
 ```
 
-## Basic steps to reproduce simulation results
+## Steps to reproduce simulation results
 
 1. Please add all files and folders under the root directory of this source code to path.
 2. Run atiya_etal_simulate.m. Enter 100 for simulating under all evidence quality levels, and run for 8000 trials.
@@ -78,13 +78,13 @@ Once the sensorimotor.m code is simulated in XPP, the phase plane configurations
 
 ## Contributing
 
-The code is not open for public contribution yet. This may change in the future.
+See copyright notice below.
 
 ## Authors
 
 * **Nadim Atiya** - (https://github.com/nidstigator)
 
-Main contributors to this research project: Inaki Rano, Girijesh Prasad and KongFatt Wong-Lin
+Contributors to this research project: Inaki Rano, Girijesh Prasad and KongFatt Wong-Lin
 
 
 ## License
@@ -105,8 +105,10 @@ You should have received a copy of the GNU General Public License
 along with uncertainty_com_modelling.  If not, see <https://www.gnu.org/licenses/>.
 
 
-## External packages used
+## External packages copyright notices
 Contourfcmap- Plotting a better contour in Matlab. Copyright (c) 2015 Kelly Kearney
+
+
 pubgraph - Make Pretty (Publishable) Graphs. Copyright (c) 2012 Ruth Livingstone
 
 
