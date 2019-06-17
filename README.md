@@ -1,8 +1,8 @@
-# A Neural Circuit Model of Uncertainty and Change-of-Mind
+# A Neural circuit model of uncertainty and change-of-mind
 
 Decision-making is often accompanied by a degree of confidence on whether a choice is correct. Decision uncertainty, or lack in confidence, may lead to change-of-mind. Studies have identified the behavioural characteristics associated with decision confidence or change-of-mind, and their neural correlates. Although several theoretical accounts have been proposed, there is no neural model that can compute decision uncertainty and explain its effects on change-of-mind. We propose a neuronal circuit model that computes decision uncertainty while accounting for a variety of behavioural and neural data of decision confidence and change-of-mind, including testable model predictions. Our theoretical analysis suggests that change-of-mind occurs due to the presence of a transient uncertainty-induced choice-neutral stable-steady state and noisy fluctuation within the neuronal network. Our distributed network model indicates that the neural basis of change-of-mind is more distinctively identified in motor-based neurons. Overall, our model provides a framework that unifies decision confidence and change-of-mind.
 
-## Getting Started
+## Getting started
 
 These instructions will get you a copy of the source code up and running on your local machine for the purpose of reproducing the results outlined in our main manuscript and supplementary information.
 
@@ -78,7 +78,7 @@ Once the sensorimotor.m code is simulated in XPP, the phase plane configurations
 
 ## Contributing
 
-See copyright notice below.
+See license below.
 
 ## Authors
 
